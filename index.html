@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA ERP - Cadastro</title>
+    <style>
+        /* ESTILOS BÁSICOS */
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* MENU LATERAL (Sidebar) */
+        .sidebar {
+            width: 250px;
+            background-color: #0a263c; /* Azul escuro da imagem */
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .logo-icon {
+            width: 30px; /* Ícone de exemplo */
+            height: 30px;
+            background-color: #e74c3c; /* Vermelho da imagem */
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .menu-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+            color: #bdc3c7;
+        }
+        .menu-item.active {
+            color: white;
+            font-weight: bold;
+        }
+        .submenu {
+            padding-left: 15px;
+            color: #95a5a6;
+            font-size: 0.9em;
+        }
+        .submenu-highlight {
+            color: #f1c40f; /* Amarelo da imagem */
+        }
+
+        /* ÁREA DE CONTEÚDO (Main Content) */
+        .main-content {
+            flex: 1;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .form-title {
+            background-color: #0a263c;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-transform: uppercase;
+            font-size: 0.9em;
+        }
+
+        /* FORMULÁRIO Grid */
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Duas colunas */
+            gap: 10px;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        .form-section-title {
+            grid-column: 1 / -1; /* Ocupa as duas colunas */
+            background-color: #0a263c;
+            color: white;
+            padding: 5px 10px;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .form-label {
+            width: 120px; /* Largura fixa para os rótulos */
+            text-align: right;
+            padding-right: 10px;
+            font-weight: bold;
+            color: #333;
+            font-size: 0.9em;
+        }
+
+        .form-input {
+            flex: 1; /* O input ocupa o restante do espaço */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            background-color: #ecf0f1; /* Cor de fundo cinza dos campos da imagem */
+        }
+
+        .form-group.full-width {
+             grid-column: 1 / -1; /* Campos que ocupam a largura total */
+        }
+
+        /* Botão Salvar de exemplo */
+        .save-button {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- MENU LATERAL -->
+    <div class="sidebar">
+        <div class="logo-container">
+            <div class="logo-icon"></div>
+            <span>SISTEMA</span>&nbsp;ERP
+        </div>
+        
+        <div class="menu-item">MODULO DE ESTOQUES</div>
+        
+        <div class="menu-item active">
+            MODULO DE RECURSOS HUMANOS
+            <div class="submenu">
+                <div>- CADASTRO DE FUNCIONARIO</div>
+                <div>- CONTROLE DE TREINAMENTO</div>
+                <div>- GESTÃO DE PONTO</div>
+                <div>- GESTÃO DE ESCALA</div>
+                <div>- CONTROLE DE ATESTADO</div>
+                <div class="submenu-highlight">- OUTRO</div>
+                <div class="submenu-highlight">- OUTRO</div>
+            </div>
+        </div>
+        
+        <div class="menu-item">MODULO DE COMPRAS</div>
+        <div class="menu-item">MODULO DE FATURAMENTO</div>
+        <div class="menu-item">MODULO DE FINANCEIRO</div>
+        <div class="menu-item">MODULO DE PRODUÇÃO</div>
+        <div class="menu-item">MODULO DE INDICADORES</div>
+    </div>
+
+    <!-- ÁREA DE CONTEÚDO -->
+    <div class="main-content">
+        <div class="header-content">
+            <div class="form-title">Cadastro de Funcionário</div>
+        </div>
+
+        <form class="form-grid">
+            
+            <!-- SEÇÃO 1: DADOS PESSOAIS -->
+            <div class="form-section-title">DADOS PESSOAIS</div>
+            
+            <div class="form-group">
+                <label class="form-label" for="nome">NOME:</label>
+                <input type="text" id="nome" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="cpf">CPF:</label>
+                <input type="text" id="cpf" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="rg">RG:</label>
+                <input type="text" id="rg" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="telefone_pessoal">TELEFONE:</label>
+                <input type="text" id="telefone_pessoal" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="estado_civil">ESTADO CIVIL:</label>
+                <input type="text" id="estado_civil" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="pis_pasep">PIS/PASEP:</label>
+                <input type="text" id="pis_pasep" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="titulo_eleitor">TITULO DE ELE:</label>
+                <input type="text" id="titulo_eleitor" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="naturalidade">NATURALIDADE:</label>
+                <input type="text" id="naturalidade" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="nome_mae">NOME DA MÃE:</label>
+                <input type="text" id="nome_mae" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="telefone_emergencia">TELEFONE:</label>
+                <input type="text" id="telefone_emergencia" class="form-input">
+            </div>
+
+            <!-- SEÇÃO 2: DADOS DE ENDEREÇO E CONTATO -->
+            <div class="form-section-title">DADOS DE ENDEREÇO E CONTATO</div>
+            
+            <div class="form-group">
+                <label class="form-label" for="endereco">ENDEREÇO:</label>
+                <input type="text" id="endereco" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="numero">NUMERO:</label>
+                <input type="text" id="numero" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="bairro">BAIRRO:</label>
+                <input type="text" id="bairro" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="cep">CEP:</label>
+                <input type="text" id="cep" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="cidade">CIDADE:</label>
+                <input type="text" id="cidade" class="form-input">
+            </div>
+            <div class="form-group">
+                <label class="form-label" for="estado">ESTADO:</label>
+                <input type="text" id="estado" class="form-input">
+            </div>
+            <div class="form-group full-width">
+                <label class="form-label" for="email">E-MAIL:</label>
+                <input type="email" id="email" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="contato_emergencia">CONT. EMERG:</label>
+                <input type="text" id="contato_emergencia" class="form-input">
+            </div>
+             <div class="form-group">
+                <label class="form-label" for="nome_contato_emergencia">NOME:</label>
+                <input type="text" id="nome_contato_emergencia" class="form-input">
+            </div>
+            
+            <!-- LINHAS EM BRANCO FINAIS -->
+            <div class="form-group full-width" style="height: 30px; background-color: #ecf0f1; border-bottom: 1px solid #bdc3c7;"></div>
+            <div class="form-group full-width" style="height: 30px; background-color: #ecf0f1; border-bottom: 1px solid #bdc3c7;"></div>
+             <div class="form-group full-width" style="height: 30px; background-color: #ecf0f1; border-bottom: 1px solid #bdc3c7;"></div>
+
+            <button type="submit" class="save-button">SALVAR CADASTRO</button>
+
+        </form>
+    </div>
+
+</body>
+</html>
